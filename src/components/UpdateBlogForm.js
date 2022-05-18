@@ -5,9 +5,11 @@ import {
     TextField,
     Typography,
   } from "@mui/material";
+import { useBlogs } from "../contexts/BlogFunctions";
   import { StyledButton } from "../pages/RegisterStyles";
   
   const UpdateBlogForm = ({blogUpdate, setBlogUpdate, handleSubmit}) => {
+
     return (
       <div>
         <Typography
@@ -17,7 +19,7 @@ import {
           marginTop="2rem"
           color={"darkblue"}
         >
-          ── New Blog ──
+          ── Update Blog ──
         </Typography>
         <CssBaseline/>
         <Container maxWidth="sm">
@@ -25,7 +27,7 @@ import {
             <Grid item xs={12}>
               <TextField
                 id="outlined-text-input"
-                label="Title"
+                value={"Title"}
                 type="text"
                 style={{ width: "20rem" }}
                 required
@@ -55,7 +57,7 @@ import {
               />
             </Grid>
           </Grid>
-          <StyledButton type="submit" onClick={handleSubmit}>Submit</StyledButton>
+          <StyledButton type="submit" onClick={handleSubmit}>Update</StyledButton>
         </Container>
       </div>
     );

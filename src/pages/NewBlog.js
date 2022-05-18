@@ -18,7 +18,7 @@ const NewBlog = () => {
     e.preventDefault();
     try {
     addBlog(newBlog);
-    navigate('/dashboard');
+    navigate('/');
     } catch (error) {
       console.log(error);
     }

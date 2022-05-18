@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, Switch } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Dashboard from '../pages/Dashboard'
 import Details from '../pages/Details'
@@ -14,13 +14,12 @@ const AppRouter = () => {
         <Navbar/>
         <Routes>
           <Route path="/" element={<Dashboard/>} />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/register" element={<Register/>} />
-          <Route path="/profile" element={<Profile/>} />
-          <Route path="/dashboard" element={<Dashboard/>} />
-          <Route path="/newblog" element={<NewBlog/>} />
-          <Route path="/updateblog/:id" element={<UpdateBlog/>} />
-          <Route path="/details/:id" element={<Details/>} />
+          <Route path="login" element={<Login/>} />
+          <Route path="register" element={<Register/>} />
+          <Route path="profile" element={<Profile/>} />
+          <Route path="newblog" element={<NewBlog/>} />
+          <Route path="updateblog/:id" element={<UpdateBlog/>} />
+          <Route path="details/:id" element={<Details/>} />
         </Routes>
     </Router>
   )

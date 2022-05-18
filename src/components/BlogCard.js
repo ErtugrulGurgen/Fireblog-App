@@ -7,14 +7,13 @@ import { useAuth } from '../contexts/AuthContextProvider';
 import { useNavigate } from 'react-router-dom';
 
 const BlogCard = ({blog}) => {
-  const navigate = useNavigate();
-    const {currentUser} = useAuth();
+    const {currentUser} = useAuth();    
   return (
     <div>
-    <Card sx={{ maxWidth: 345}} style={{cursor:"pointer"}} onClick={()=>navigate("details/" + blog.id )}>
+    <Card sx={{ maxWidth: "75vw"}} >
       <CardMedia
         component="img"
-        height="194"
+        height="250"
         image = {blog.image}
         alt=""
       />

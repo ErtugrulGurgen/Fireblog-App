@@ -10,7 +10,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     signInUser(email, password, navigate);
-    navigate("/dashboard");
+    navigate("/");
   };
 
   const handleGoogleProvider = ()=>{

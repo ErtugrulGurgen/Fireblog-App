@@ -12,7 +12,7 @@ const Dashboard = () => {
   console.log(blog);
   // console.log(currentUser.email);
   const navigate = useNavigate();
-
+  
   return (
     <div>
       <Typography
@@ -29,7 +29,7 @@ const Dashboard = () => {
         {blog === undefined ? (
           <p>Loading</p> ) : blog ? (
         blog?.map((item, index) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={index} >
+          <Grid item xs={12} sm={6} md={4} lg={3} key={index} onClick = {()=> navigate("/details/" + item.id )} style={{cursor:"pointer"}}>
           <BlogCard
             blog={item}
           />
