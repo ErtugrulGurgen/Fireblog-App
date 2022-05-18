@@ -5,7 +5,7 @@ import { useAuth } from "../contexts/AuthContextProvider";
 import {updateBlog} from "../contexts/BlogFunctions";
 
 const UpdateBlog = () => {
-  const { currentUser } = useAuth();
+  // const { currentUser } = useAuth();
   const [blogUpdate, setBlogUpdate] = useState({
     title: "",
     image: "",

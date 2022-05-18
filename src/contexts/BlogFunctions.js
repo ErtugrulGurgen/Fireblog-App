@@ -54,6 +54,26 @@ export const useBlogs = () => {
 
 // const BlogContextProvider = ({ children }) => {
 //   const [blog, setBlog] = useState();
+
+//   const addBlog = (blogValue) => {
+//     const db = getDatabase();
+//     const userRef = ref(db, "blogs");
+//     const newUserRef = push(userRef);
+//     set(newUserRef, blogValue);
+//   };
+  
+//   const updateBlog = (id, data) => {
+//     const db = getDatabase();
+//     const updates = {};
+//     updates[`blogs/${id}`] = data;
+//     return update(ref(db), updates);
+//   };
+
+//   const deleteBlog = (id) => {
+//     const db = getDatabase();
+//     remove(ref(db, `blogs/${id}`));
+//   };
+
 //   const getBlog = (id) => {
 //   const result = blog?.filter((item) => item.id === id);
 //   return result;
@@ -71,8 +91,17 @@ export const useBlogs = () => {
 //       setBlog(blogList);
 //     });
 //   }, []);
+
+//   const value = {
+//     blog,
+//     addBlog,
+//     updateBlog,
+//     deleteBlog,
+//     getBlog,
+//   };
+
 //   return (
-//     <BlogContext.Provider value={{ blog, getBlog }}>
+//     <BlogContext.Provider value={value}>
 //       {children}
 //     </BlogContext.Provider>
 //   );

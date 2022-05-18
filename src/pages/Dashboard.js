@@ -4,7 +4,7 @@ import { useBlogs } from "../contexts/BlogFunctions";
 import { useAuth } from "../contexts/AuthContextProvider";
 import BlogCard from "../components/BlogCard";
 import { Grid } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   // const { currentUser } = useAuth();
@@ -12,7 +12,6 @@ const Dashboard = () => {
   console.log(blog);
   // console.log(currentUser.email);
   const navigate = useNavigate();
-
 
   return (
     <div>
@@ -27,13 +26,16 @@ const Dashboard = () => {
         ──── Dashboard ────
       </Typography>
       <Grid container spacing={3} justify="center">
-        {blog?.map((item, index) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={index} onClick={()=>navigate("detail/" + item.id )}>
+        {blog === undefined ? (
+          <p>Loading</p> ) : blog ? (
+        blog?.map((item, index) => (
+          <Grid item xs={12} sm={6} md={4} lg={3} key={index} >
           <BlogCard
             blog={item}
           />
           </Grid>
-        ))}
+        )) ) : (<h3>No Data</h3>
+        )}
       </Grid>
     </div>
   );

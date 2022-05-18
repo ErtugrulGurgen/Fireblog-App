@@ -4,12 +4,14 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import React from 'react'
 import { useAuth } from '../contexts/AuthContextProvider';
+import { useNavigate } from 'react-router-dom';
 
 const BlogCard = ({blog}) => {
+  const navigate = useNavigate();
     const {currentUser} = useAuth();
   return (
     <div>
-    <Card sx={{ maxWidth: 345 }} style={{cursor:"pointer"}} >
+    <Card sx={{ maxWidth: 345}} style={{cursor:"pointer"}} onClick={()=>navigate("details/" + blog.id )}>
       <CardMedia
         component="img"
         height="194"
@@ -20,12 +22,12 @@ const BlogCard = ({blog}) => {
         title={blog.title}
         subheader="September 14, 2016"
       />
-      <CardContent>
+      <CardContent sx={{height: 150, overflow:"hidden"}}>
         <Typography variant="body2" color="text.secondary">
           {blog.description}
         </Typography>
       </CardContent>
-      <div style={{display:"flex", justifyContent:"start"}}>
+      <div style={{display:"flex", justifyContent:"start", marginTop: "10px"}}>
         <PersonIcon/>
         <>{currentUser.email}</>
         </div>
