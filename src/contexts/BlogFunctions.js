@@ -20,6 +20,7 @@ export const updateBlog = (id, data) => {
   const db = getDatabase();
   const updates = {};
   updates[`blogs/${id}`] = data;
+  console.log(data)
   return update(ref(db), updates);
 };
 
