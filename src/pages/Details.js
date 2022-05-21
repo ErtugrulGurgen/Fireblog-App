@@ -3,19 +3,23 @@ import React from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import BlogCard from "../components/BlogCard";
 import { useAuth } from "../contexts/AuthContextProvider";
-import { useBlogs } from "../contexts/BlogFunctions";
+import { deleteBlog, useBlogs } from "../contexts/BlogFunctions";
 import { StyledButton } from "./RegisterStyles";
 
 const Details = () => {
   const {currentUser} = useAuth();
-  console.log(currentUser);
+  console.log(currentUser.email);
   const {id} = useParams();
   console.log(id)
   const blog = useBlogs();
   console.log(blog);
   const navigate = useNavigate();
-const handleClick = (e) => {
+const handleUpdate = (e) => {
     navigate("/updateblog/" + id);
+}
+const handleDelete = (e) => {
+  deleteBlog(id);
+  navigate("/");
 }
 
   return (
@@ -24,10 +28,13 @@ const handleClick = (e) => {
         <p>Loading</p> ) : blog ? (
           blog?.map((item, index) => (
            item.id === id ? (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={index}  >
+             <div style={{width: "75vw"}}>
               <BlogCard key={index} blog={item} />
-              <StyledButton onClick={handleClick}>UPDATE</StyledButton>
-            </Grid>
+              {item.blogger === currentUser.email ? (
+                <div>
+                <StyledButton onClick={handleUpdate}>UPDATE</StyledButton>
+                <StyledButton onClick={handleDelete}>DELETE</StyledButton></div>) : null}
+                </div>
             ) : null
           )) ) : (<h3>No Data</h3>
           )}

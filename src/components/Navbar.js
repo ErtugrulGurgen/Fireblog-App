@@ -58,7 +58,7 @@ export default function Navbar() {
               },
             }}
           >
-            ---- <span>{"<'s/>"}</span> Blog ----
+            ---- <span>{"<Someone's/>"}</span> Blog ----
           </Typography>
           <div>
             <IconButton
@@ -84,15 +84,15 @@ export default function Navbar() {
                 horizontal: "right",
               }}
               open={Boolean(anchorEl)}
-              onClose={handleClose}
-            ><Link to="/login" style={{textDecoration:"none", color: "black"}}>
-            <MenuItem onClick={handleLogout}>Logout</MenuItem>
+              onClose={handleClose}>
+            <Link to="/profile" style={{textDecoration:"none", color: "black"}}>
+            <MenuItem onClick={handleClose}>Profile</MenuItem>
             </Link>
             <Link to="/newblog" style={{textDecoration:"none", color: "black"}}>
             <MenuItem onClick={handleClose}>New</MenuItem>
             </Link>
-            <Link to="/register" style={{textDecoration:"none", color: "black"}}>
-            <MenuItem onClick={handleClose}>Register</MenuItem>
+            <Link to="/login" style={{textDecoration:"none", color: "black"}}>
+            <MenuItem onClick={handleLogout}>Logout</MenuItem>
             </Link>
             </Menu>):(<Menu
               id="menu-appbar"

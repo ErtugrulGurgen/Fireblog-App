@@ -7,10 +7,10 @@ import { Grid } from "@mui/material";
 import {  useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-  // const { currentUser } = useAuth();
+  const { currentUser } = useAuth();
   const blog = useBlogs();
   console.log(blog);
-  // console.log(currentUser.email);
+  console.log(currentUser);
   const navigate = useNavigate();
   
   return (
@@ -29,7 +29,7 @@ const Dashboard = () => {
         {blog === undefined ? (
           <p>Loading</p> ) : blog ? (
         blog?.map((item, index) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={index} onClick = {()=> navigate("/details/" + item.id )} style={{cursor:"pointer"}}>
+          <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
           <BlogCard
             blog={item}
           />

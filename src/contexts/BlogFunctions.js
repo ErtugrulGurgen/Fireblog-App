@@ -9,6 +9,7 @@ import {
   onValue,
 } from "firebase/database";
 
+
 export const addBlog = (blogValue) => {
   const db = getDatabase();
   const userRef = ref(db, "blogs");
@@ -20,7 +21,6 @@ export const updateBlog = (id, data) => {
   const db = getDatabase();
   const updates = {};
   updates[`blogs/${id}`] = data;
-  console.log(data)
   return update(ref(db), updates);
 };
 
@@ -40,7 +40,6 @@ export const useBlogs = () => {
       for (let id in data) {
         blogList.push({ id, ...data[id] });
       }
-      console.log(snapshot.val());
       setBlog(blogList);
     });
   }, []);

@@ -24,15 +24,15 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
-export const createUser = async (email, password, navigate, displayName) => {
+export const createUser = async (email, password, navigate) => {
   try {
     await createUserWithEmailAndPassword(
       auth,
       email,
       password
     );
-    await updateProfile(auth.currentUser, { displayName: displayName });
-    navigate("/dashboard");
+    await updateProfile(auth.currentUser, { email: email });  
+    navigate("/");
   } catch (err) {
     alert(err.message);
   }
@@ -40,12 +40,13 @@ export const createUser = async (email, password, navigate, displayName) => {
 
 export const signInUser = async (email, password, navigate) => {
   try {
-    await signInWithEmailAndPassword(
+    const signIn = await signInWithEmailAndPassword(
       auth,
       email,
       password
     );
-    navigate("/dashboard");
+    console.log(signIn);
+    navigate("/");
   } catch (err) {
     alert(err.message);
   }
@@ -69,7 +70,7 @@ export const signUpProvider = (navigate) => {
   const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
     .then((result) => {
-      navigate("/dashboard");
+      navigate("/");
     })
     .catch((error) => {
       alert(error.message);

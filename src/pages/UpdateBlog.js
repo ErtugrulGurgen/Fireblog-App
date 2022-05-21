@@ -12,7 +12,7 @@ import { updateBlog, useBlogs } from "../contexts/BlogFunctions";
 import { StyledButton } from "./RegisterStyles";
 
 const UpdateBlog = () => {
-  // const { currentUser } = useAuth();
+  const { currentUser } = useAuth();
 
   const navigate = useNavigate();
   const id = useParams();
@@ -27,6 +27,7 @@ const UpdateBlog = () => {
     title: "",
     image: "",
     description: "",
+    blogger: currentUser.email,
   });
 
   return (
