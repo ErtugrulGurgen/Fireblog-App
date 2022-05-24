@@ -128,7 +128,7 @@ const UpdateBlog = () => {
       bloge();
       console.log(blogUpdate);
       updateBlog(strID, blogUpdate);
-      navigate("/");
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
     }

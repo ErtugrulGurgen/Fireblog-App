@@ -16,6 +16,8 @@ import { useNavigate } from "react-router-dom";
 import { updateBlog } from "../contexts/BlogFunctions";
 
 const BlogCard = ({ blog }) => {
+  const date = new Date();
+  const today = date.toLocaleDateString();
   const [count, setCount] = useState(blog.count);
   const [color, setColor] = useState("pink");
   const [clicked, setClicked] = useState(false);
@@ -36,7 +38,7 @@ const BlogCard = ({ blog }) => {
           style={{ cursor: "pointer" }}
         >
           <CardMedia component="img" height="250" image={blog.image} alt="" />
-          <CardHeader title={blog.title} subheader="September 14, 2016" />
+          <CardHeader title={blog.title} subheader={today}/>
           <CardContent sx={{ height: 150, overflow: "hidden" }}>
             <Typography variant="body2" color="text.secondary">
               {blog.description}

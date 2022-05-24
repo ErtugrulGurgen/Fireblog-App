@@ -22,7 +22,7 @@ const NewBlog = () => {
     try {
     setBlogger(currentUser.email);
     addBlog(newBlog);
-    navigate('/');
+    navigate('/dashboard');
     } catch (error) {
       console.log(error);
     }

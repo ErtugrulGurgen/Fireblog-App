@@ -13,7 +13,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     createUser(email, password, navigate);
-    navigate("/");
+    navigate("/dashboard");
   };
   return (
     <RegisterContainer>
