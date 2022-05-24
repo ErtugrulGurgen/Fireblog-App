@@ -12,7 +12,7 @@ const NewBlog = () => {
     image: '',
     description: '',
     blogger: blogger,
-    likes: 0,
+    count: 0,
   });
 
   const navigate = useNavigate();

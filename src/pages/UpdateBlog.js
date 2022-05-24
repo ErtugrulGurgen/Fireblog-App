@@ -28,6 +28,7 @@ const UpdateBlog = () => {
     image: "",
     description: "",
     blogger: currentUser.email,
+    count: 0,
   });
 
   return (
@@ -118,6 +119,7 @@ const UpdateBlog = () => {
           blogUpdate.description = item.description;
           console.log(blogUpdate.description)
       }
+      blogUpdate.count = item.count;
     }
         // blogUpdate.title === "" ? blogUpdate.title = item.title : " "; 
         // blogUpdate.image === "" ? blogUpdate.image = item.image : " ";
