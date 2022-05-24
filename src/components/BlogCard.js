@@ -34,7 +34,7 @@ const BlogCard = ({ blog }) => {
     <div>
       <Card sx={{ maxWidth: "75vw" }}>
         <div
-          onClick={() => navigate("/details/" + blog.id)}
+          onClick={() => navigate("/Fireblog-App/details/" + blog.id)}
           style={{ cursor: "pointer" }}
         >
           <CardMedia component="img" height="250" image={blog.image} alt="" />

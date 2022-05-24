@@ -35,7 +35,7 @@ export default function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{backgroundColor:"darkblue"}}>
         <Toolbar>
-          <Link to={"/dashboard"}>
+          <Link to={"/Fireblog-App/dashboard"}>
           <IconButton
             size="large"
             edge="start"
@@ -85,13 +85,13 @@ export default function Navbar() {
               }}
               open={Boolean(anchorEl)}
               onClose={handleClose}>
-            <Link to="/profile" style={{textDecoration:"none", color: "black"}}>
+            <Link to="/Fireblog-App/profile" style={{textDecoration:"none", color: "black"}}>
             <MenuItem onClick={handleClose}>Profile</MenuItem>
             </Link>
-            <Link to="/newblog" style={{textDecoration:"none", color: "black"}}>
+            <Link to="/Fireblog-App/newblog" style={{textDecoration:"none", color: "black"}}>
             <MenuItem onClick={handleClose}>New</MenuItem>
             </Link>
-            <Link to="/login" style={{textDecoration:"none", color: "black"}}>
+            <Link to="/Fireblog-App/login" style={{textDecoration:"none", color: "black"}}>
             <MenuItem onClick={handleLogout}>Logout</MenuItem>
             </Link>
             </Menu>):(<Menu
@@ -108,10 +108,10 @@ export default function Navbar() {
               }}
               open={Boolean(anchorEl)}
               onClose={handleClose}
-            ><Link to="/login" style={{textDecoration:"none", color: "black"}}>
+            ><Link to="/Fireblog-App/login" style={{textDecoration:"none", color: "black"}}>
               <MenuItem onClick={handleClose}>Login</MenuItem>
               </Link>
-              <Link to="/register" style={{textDecoration:"none", color: "black"}}>
+              <Link to="/Fireblog-App/register" style={{textDecoration:"none", color: "black"}}>
               <MenuItem onClick={handleClose}>Register</MenuItem>
               </Link>
             </Menu>)}

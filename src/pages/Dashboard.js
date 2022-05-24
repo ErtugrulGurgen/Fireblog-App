@@ -11,7 +11,6 @@ const Dashboard = () => {
   const blog = useBlogs();
   console.log(blog);
   console.log(currentUser);
-  const navigate = useNavigate();
   
   return (
     <div>

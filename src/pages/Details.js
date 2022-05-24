@@ -15,11 +15,11 @@ const Details = () => {
   console.log(blog);
   const navigate = useNavigate();
 const handleUpdate = (e) => {
-    navigate("/updateblog/" + id);
+    navigate("/Fireblog-App/updateblog/" + id);
 }
 const handleDelete = (e) => {
   deleteBlog(id);
-  navigate("/dashboard");
+  navigate("/Fireblog-App/dashboard");
 }
 
   return (

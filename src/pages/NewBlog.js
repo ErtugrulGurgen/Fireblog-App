@@ -22,7 +22,7 @@ const NewBlog = () => {
     try {
     setBlogger(currentUser.email);
     addBlog(newBlog);
-    navigate('/dashboard');
+    navigate('/Fireblog-App/dashboard');
     } catch (error) {
       console.log(error);
     }
