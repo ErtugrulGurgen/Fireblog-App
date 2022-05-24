@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Fireblog-App/static/css/main.6dfa8ee2.css",
+    "main.js": "/Fireblog-App/static/js/main.cd8a9106.js",
+    "static/js/787.beb3ab3b.chunk.js": "/Fireblog-App/static/js/787.beb3ab3b.chunk.js",
+    "static/media/cw.jpeg": "/Fireblog-App/static/media/cw.041cf5e8b9f405eff614.jpeg",
+    "index.html": "/Fireblog-App/index.html",
+    "main.6dfa8ee2.css.map": "/Fireblog-App/static/css/main.6dfa8ee2.css.map",
+    "main.cd8a9106.js.map": "/Fireblog-App/static/js/main.cd8a9106.js.map",
+    "787.beb3ab3b.chunk.js.map": "/Fireblog-App/static/js/787.beb3ab3b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6dfa8ee2.css",
+    "static/js/main.cd8a9106.js"
+  ]
+}
