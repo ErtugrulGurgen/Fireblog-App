@@ -13,7 +13,7 @@ const AppRouter = () => {
     <Router>
         <Navbar/>
         <Routes>
-          <Route path="Fireblog-App/dashboard" element={<Dashboard/>} />
+          <Route path="Fireblog-App/" element={<Dashboard/>} />
           <Route path="Fireblog-App/login" element={<Login/>} />
           <Route path="Fireblog-App/register" element={<Register/>} />
           <Route path="Fireblog-App/profile" element={<Profile/>} />

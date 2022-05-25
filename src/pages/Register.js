@@ -13,7 +13,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     createUser(email, password, navigate);
-    navigate("/Fireblog-App/dashboard");
+    navigate("/Fireblog-App/");
   };
   return (
     <RegisterContainer>

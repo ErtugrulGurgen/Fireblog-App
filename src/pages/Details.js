@@ -19,7 +19,7 @@ const handleUpdate = (e) => {
 }
 const handleDelete = (e) => {
   deleteBlog(id);
-  navigate("/Fireblog-App/dashboard");
+  navigate("/Fireblog-App/");
 }
 
   return (

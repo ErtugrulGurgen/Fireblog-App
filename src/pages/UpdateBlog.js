@@ -128,7 +128,7 @@ const UpdateBlog = () => {
       bloge();
       console.log(blogUpdate);
       updateBlog(strID, blogUpdate);
-      navigate("/Fireblog-App/dashboard");
+      navigate("/Fireblog-App/");
     } catch (error) {
       console.log(error);
     }

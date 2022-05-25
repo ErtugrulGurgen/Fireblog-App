@@ -32,7 +32,7 @@ export const createUser = async (email, password, navigate) => {
       password
     );
     await updateProfile(auth.currentUser, { email: email });  
-    navigate("/Fireblog-App/dashboard");
+    navigate("/Fireblog-App/");
   } catch (err) {
     alert(err.message);
   }
@@ -46,7 +46,7 @@ export const signInUser = async (email, password, navigate) => {
       password
     );
     console.log(signIn);
-    navigate("/Fireblog-App/dashboard");
+    navigate("/Fireblog-App/");
   } catch (err) {
     alert(err.message);
   }
@@ -70,7 +70,7 @@ export const signUpProvider = (navigate) => {
   const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
     .then((result) => {
-      navigate("/Fireblog-App/dashboard");
+      navigate("/Fireblog-App/");
     })
     .catch((error) => {
       alert(error.message);

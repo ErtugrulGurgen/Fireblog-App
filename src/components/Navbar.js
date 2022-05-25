@@ -35,7 +35,7 @@ export default function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{backgroundColor:"darkblue"}}>
         <Toolbar>
-          <Link to={"/Fireblog-App/dashboard"}>
+          <Link to={"/Fireblog-App/"}>
           <IconButton
             size="large"
             edge="start"
