@@ -45,7 +45,6 @@ export const signInUser = async (email, password, navigate) => {
       email,
       password
     );
-    console.log(signIn);
     navigate("/Fireblog-App/");
   } catch (err) {
     alert(err.message);

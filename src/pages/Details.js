@@ -1,6 +1,5 @@
-import { Grid } from "@mui/material";
 import React from "react";
-import { useParams, useLocation, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import BlogCard from "../components/BlogCard";
 import { useAuth } from "../contexts/AuthContextProvider";
 import { deleteBlog, useBlogs } from "../contexts/BlogFunctions";
@@ -12,7 +11,6 @@ const Details = () => {
   const {id} = useParams();
   console.log(id)
   const blog = useBlogs();
-  console.log(blog);
   const navigate = useNavigate();
 const handleUpdate = (e) => {
     navigate("/Fireblog-App/updateblog/" + id);

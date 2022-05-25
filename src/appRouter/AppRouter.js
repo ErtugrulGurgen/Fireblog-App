@@ -21,7 +21,9 @@ const AppRouter = () => {
   const PrivateRouter = () => {
     let location = useLocation();
     if (!currentUser) {
-      return <Navigate to="/login" state={{ from: location }} replace />;
+      return (
+        <Navigate to="Fireblog-App/login" state={{ from: location }} replace />
+      );
     }
     return <Outlet />;
   };
@@ -29,10 +31,10 @@ const AppRouter = () => {
     <Router>
       <Navbar />
       <Routes>
+        <Route path="Fireblog-App/" element={<Dashboard />} />
         <Route path="Fireblog-App/login" element={<Login />} />
         <Route path="Fireblog-App/register" element={<Register />} />
         <Route element={<PrivateRouter />}>
-          <Route path="Fireblog-App/" element={<Dashboard />} />
           <Route path="Fireblog-App/profile" element={<Profile />} />
           <Route path="Fireblog-App/newblog" element={<NewBlog />} />
           <Route path="Fireblog-App/updateblog/:id" element={<UpdateBlog />} />

@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import React from 'react'
 import BlogCard from '../components/BlogCard';
 import { useAuth } from '../contexts/AuthContextProvider';
@@ -6,7 +6,6 @@ import { useBlogs } from '../contexts/BlogFunctions';
 
 const Profile = () => {
   const {currentUser} = useAuth();
-  // console.log(currentUser.email);
   const blog = useBlogs();
 
   return (

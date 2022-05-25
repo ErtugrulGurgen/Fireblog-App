@@ -23,14 +23,13 @@ const BlogCard = ({ blog }) => {
   const [color, setColor] = useState("pink");
   const [clicked, setClicked] = useState(false);
   const navigate = useNavigate();
-  console.log(clicked, color, count);
   const handleClick = (e) => {
-  currentUser ? (
-    setClicked(!clicked),
-    color === "pink" ? setColor("red") : setColor("pink"),
+    if (currentUser){
+    setClicked(!clicked);
+    color === "pink" ? setColor("red") : setColor("pink");
     clicked === false ? setCount(count + 1) : setCount(count - 1)
-  ) : null
-  };
+  }
+};
   updateBlog(blog.id, { ...blog, count: count });
   return (
     <div>

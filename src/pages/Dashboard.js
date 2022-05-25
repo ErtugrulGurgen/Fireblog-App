@@ -1,17 +1,13 @@
 import Typography from "@mui/material/Typography";
-import { useState } from "react";
 import { useBlogs } from "../contexts/BlogFunctions";
 import { useAuth } from "../contexts/AuthContextProvider";
 import BlogCard from "../components/BlogCard";
 import { Grid } from "@mui/material";
-import {  useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const { currentUser } = useAuth();
   const blog = useBlogs();
-  console.log(blog);
-  console.log(currentUser);
-  
+
   return (
     <div>
       <Typography

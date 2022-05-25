@@ -6,22 +6,18 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContextProvider";
 import { updateBlog, useBlogs } from "../contexts/BlogFunctions";
 import { StyledButton } from "./RegisterStyles";
 
 const UpdateBlog = () => {
   const { currentUser } = useAuth();
-
   const navigate = useNavigate();
   const id = useParams();
-  // console.log(id)
   const strID = id.id;
-  // console.log(strID)
 
   const blog = useBlogs();
-  console.log(blog)
 
   const [blogUpdate, setBlogUpdate] = useState({
     title: "",
@@ -103,30 +99,20 @@ const UpdateBlog = () => {
                   </Grid>
                 </Grid>
                 <StyledButton type="submit" onClick={() => {
-    // e.preventDefault();
     try {
       const bloge = () => {
         if (blogUpdate.title === "") {
           blogUpdate.title = item.title;
-          // setBlogUpdate({...blogUpdate, title : item.title});
-          console.log(blogUpdate.title);
         }
         if (blogUpdate.image === "") {
           blogUpdate.image = item.image;
-          console.log(blogUpdate.image)
         }
         if (blogUpdate.description === "") {
           blogUpdate.description = item.description;
-          console.log(blogUpdate.description)
       }
       blogUpdate.count = item.count;
     }
-        // blogUpdate.title === "" ? blogUpdate.title = item.title : " "; 
-        // blogUpdate.image === "" ? blogUpdate.image = item.image : " ";
-        // blogUpdate.description === "" ? blogUpdate.description = item.description : " ";
-        // return blogUpdate.title, blogUpdate.image, blogUpdate.description;
       bloge();
-      console.log(blogUpdate);
       updateBlog(strID, blogUpdate);
       navigate("/Fireblog-App/");
     } catch (error) {
