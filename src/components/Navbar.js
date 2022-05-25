@@ -58,7 +58,7 @@ export default function Navbar() {
               },
             }}
           >
-            ---- <span>{"<Someone's/>"}</span> Blog ----
+            ---- <span>{"<Someone's/>"}</span> Blog ----(TEST)
           </Typography>
           <div>
             <IconButton
