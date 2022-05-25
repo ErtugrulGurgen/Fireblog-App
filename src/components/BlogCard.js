@@ -21,7 +21,6 @@ const BlogCard = ({ blog }) => {
   const [count, setCount] = useState(blog.count);
   const [color, setColor] = useState("pink");
   const [clicked, setClicked] = useState(false);
-  const { currentUser } = useAuth();
   const navigate = useNavigate();
   console.log(clicked, color, count);
   const handleClick = (e) => {
