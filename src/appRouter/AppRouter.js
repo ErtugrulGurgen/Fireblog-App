@@ -22,7 +22,7 @@ const AppRouter = () => {
     let location = useLocation();
     if (!currentUser) {
       return (
-        <Navigate to="Fireblog-App/login" state={{ from: location }} replace />
+        <Navigate to="/Fireblog-App/login" state={{ from: location }} replace />
       );
     }
     return <Outlet />;
