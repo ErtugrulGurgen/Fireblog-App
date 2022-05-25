@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 import { updateBlog } from "../contexts/BlogFunctions";
 
 const BlogCard = ({ blog }) => {
+  const { currentUser } = useAuth();
   const date = new Date();
   const today = date.toLocaleDateString();
   const [count, setCount] = useState(blog.count);
@@ -24,9 +25,11 @@ const BlogCard = ({ blog }) => {
   const navigate = useNavigate();
   console.log(clicked, color, count);
   const handleClick = (e) => {
-    setClicked(!clicked);
-    color === "pink" ? setColor("red") : setColor("pink");
-    clicked === false ? setCount(count + 1) : setCount(count - 1);
+  currentUser ? (
+    setClicked(!clicked),
+    color === "pink" ? setColor("red") : setColor("pink"),
+    clicked === false ? setCount(count + 1) : setCount(count - 1)
+  ) : null
   };
   updateBlog(blog.id, { ...blog, count: count });
   return (
