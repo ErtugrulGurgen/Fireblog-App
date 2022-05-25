@@ -7,6 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { useAuth } from "../contexts/AuthContextProvider";
 import Dashboard from "../pages/Dashboard";
 import Details from "../pages/Details";
 import Login from "../pages/Login";
