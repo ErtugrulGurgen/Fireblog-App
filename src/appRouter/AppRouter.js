@@ -13,13 +13,13 @@ const AppRouter = () => {
     <Router>
         <Navbar/>
         <Routes>
-          <Route path="/Fireblog-App/dashboard" element={<Dashboard/>} />
-          <Route path="/Fireblog-App/login" element={<Login/>} />
-          <Route path="/Fireblog-App/register" element={<Register/>} />
-          <Route path="/Fireblog-App/profile" element={<Profile/>} />
-          <Route path="/Fireblog-App/newblog" element={<NewBlog/>} />
-          <Route path="/Fireblog-App/updateblog/:id" element={<UpdateBlog/>} />
-          <Route path="/Fireblog-App/details/:id" element={<Details/>} />
+          <Route path="Fireblog-App/dashboard" element={<Dashboard/>} />
+          <Route path="Fireblog-App/login" element={<Login/>} />
+          <Route path="Fireblog-App/register" element={<Register/>} />
+          <Route path="Fireblog-App/profile" element={<Profile/>} />
+          <Route path="Fireblog-App/newblog" element={<NewBlog/>} />
+          <Route path="Fireblog-App/updateblog/:id" element={<UpdateBlog/>} />
+          <Route path="Fireblog-App/details/:id" element={<Details/>} />
         </Routes>
     </Router>
   )
