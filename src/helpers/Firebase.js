@@ -11,13 +11,13 @@ import {
 } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBnRwu3rmO1r_2KIiYnoYGAKJWWnalIasY",
-  authDomain: "blog-app-16d25.firebaseapp.com",
-  databaseURL: "https://blog-app-16d25-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "blog-app-16d25",
-  storageBucket: "blog-app-16d25.appspot.com",
-  messagingSenderId: "548977964749",
-  appId: "1:548977964749:web:8ea8c9c7302860cfff1b84"
+  apiKey: "AIzaSyAFcRgwJEl7KFTEnqr67sT5lgcgzclmmCk",
+  authDomain: "fireblog-app-1e2bb.firebaseapp.com",
+  databaseURL: "https://fireblog-app-1e2bb-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "fireblog-app-1e2bb",
+  storageBucket: "fireblog-app-1e2bb.appspot.com",
+  messagingSenderId: "212825336356",
+  appId: "1:212825336356:web:2b5f61108f72bcf78986b1"
 };
 
 const app = initializeApp(firebaseConfig);
