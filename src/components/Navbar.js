@@ -8,7 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import cw from "../assets/cw.jpeg";
+import logo from "../assets/70950.png";
 import {AuthContext} from "../contexts/AuthContextProvider";
 import { logOut } from "../helpers/Firebase";
 
@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" style={{backgroundColor:"darkblue"}}>
+      <AppBar position="static" style={{backgroundColor:"#3c3c3c"}}>
         <Toolbar>
           <Link to={"/Fireblog-App/"}>
           <IconButton
@@ -43,7 +43,7 @@ export default function Navbar() {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <img src={cw} alt="cw-logo" style={{display:"flex", height:"30px"}}/>
+            <img src={logo} alt="cw-logo" style={{display:"flex", height:"30px"}}/>
           </IconButton>
           </Link>
           <Typography
