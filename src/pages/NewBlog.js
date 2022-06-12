@@ -14,6 +14,8 @@ const NewBlog = () => {
     description: '',
     blogger: blogger,
     count: 0,
+    get_rating: 0,
+    raters: 0,
   });
 
   const navigate = useNavigate();
