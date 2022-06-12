@@ -1,11 +1,14 @@
 import {
   Card,
+  Box,
+  Rating,
   CardActions,
   CardContent,
   CardHeader,
   CardMedia,
   IconButton,
   Typography,
+  Button,
 } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
@@ -23,14 +26,37 @@ const BlogCard = ({ blog }) => {
   const [color, setColor] = useState("pink");
   const [clicked, setClicked] = useState(false);
   const navigate = useNavigate();
+  const [value, setValue] = useState(blog.get_rating);
+  const [raters, setRaters] = useState(blog.raters);
+  const totalRating = blog.get_rating * blog.raters;
+  const [disabled, setDisabled] = useState(false);
   const handleClick = (e) => {
-    if (currentUser){
-    setClicked(!clicked);
-    color === "pink" ? setColor("red") : setColor("pink");
-    clicked === false ? setCount(count + 1) : setCount(count - 1)
-  }
-};
-  updateBlog(blog.id, { ...blog, count: count });
+    if (currentUser) {
+      setClicked(!clicked);
+      color === "pink" ? setColor("red") : setColor("pink");
+      clicked === false ? setCount(count + 1) : setCount(count - 1);
+    }
+  };
+  const handleChange = (e, newValue) => {
+    setValue(newValue);
+  };
+  const handleRate = (e) => {
+    const blogValue = parseInt((totalRating + value) / (raters + 1));
+    setDisabled(true);
+    if (currentUser) {
+      updateBlog(blog.id, {
+        ...blog,
+        get_rating: blogValue,
+        raters: raters + 1,
+      });
+    }
+    setValue(blogValue);
+  };
+  updateBlog(blog.id, {
+    ...blog,
+    count: count,
+  });
+
   return (
     <div>
       <Card sx={{ maxWidth: "75vw" }}>
@@ -39,13 +65,32 @@ const BlogCard = ({ blog }) => {
           style={{ cursor: "pointer" }}
         >
           <CardMedia component="img" height="250" image={blog.image} alt="" />
-          <CardHeader title={blog.title} subheader={today}/>
+          <CardHeader title={blog.title} subheader={today} />
           <CardContent sx={{ height: 150, overflow: "hidden" }}>
             <Typography variant="body2" color="text.secondary">
               {blog.description}
             </Typography>
           </CardContent>
         </div>
+        <div>
+          <Typography component="legend">Rating: {blog.get_rating}</Typography>
+          <Rating
+            name="simple-controlled"
+            value={value}
+            onChange={handleChange}
+          />
+        </div>
+        <div style={{fontSize: "12px", marginBottom:"10px"}}> Avg. Rating: {blog.get_rating}</div>
+        <Button
+          variant="contained"
+          color="success"
+          style={{ backgroundColor: "yellow", color: "black" }}
+          onClick={handleRate}
+          disabled={disabled}
+        >
+          RATE
+        </Button>
+
         <div
           style={{
             display: "flex",
